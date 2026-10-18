@@ -6,7 +6,7 @@
  * Usage: tsx scripts/fetch-pro-fonts.ts
  */
 
-import { execSync } from 'node:child_process';
+import { execFileSync, execSync } from 'node:child_process';
 import { cpSync, mkdirSync, mkdtempSync, readdirSync, readFileSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
@@ -25,7 +25,7 @@ function ensureAuthToken(): Promise<void> {
   return new Promise((resolve) =>
     rl.question('Please enter your FontAwesome npm token: ', (token) => {
       rl.close();
-      execSync(`npm config set '//npm.fontawesome.com/:_authToken' '${token.trim()}'`);
+      execFileSync('npm', ['config', 'set', '//npm.fontawesome.com/:_authToken', token.trim()]);
       resolve();
     }),
   );
