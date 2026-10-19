@@ -26,7 +26,7 @@ const fonts = [
   'FontAwesome5_Pro_Light.ttf',
   'FontAwesome5_Pro_Brands.ttf',
   'FontAwesome5_Pro_Regular.ttf',
-  'FontAwesome5_Pro_Solid.ttf"',
+  'FontAwesome5_Pro_Solid.ttf',
   'FontAwesome6_Pro_Light.ttf',
   'FontAwesome6_Pro_Brands.ttf',
   'FontAwesome6_Pro_Regular.ttf',
