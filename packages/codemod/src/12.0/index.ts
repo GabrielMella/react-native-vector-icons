@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { exec } from 'node:child_process';
+import { execFile } from 'node:child_process';
 import path from 'node:path';
 
 import moveFonts from './move-fonts';
@@ -13,9 +13,15 @@ if (!dir) {
 }
 
 const transformFilePath = path.join(__dirname, 'transform.js');
-const cmd = `jscodeshift --transform ${transformFilePath}  --extensions js,ts,jsx,tsx --parser tsx --ignore-pattern '**/node_modules/**' ${dir}`;
+const args = [
+  '--transform', transformFilePath,
+  '--extensions', 'js,ts,jsx,tsx',
+  '--parser', 'tsx',
+  '--ignore-pattern', '**/node_modules/**',
+  dir,
+];
 
-const proc = exec(cmd, { env: { ...process.env, FORCE_COLOR: 'true' } });
+const proc = execFile('jscodeshift', args, { env: { ...process.env, FORCE_COLOR: 'true' } });
 
 proc.stdout?.on('data', (data: string) => {
   console.log(data);
