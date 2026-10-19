@@ -6,7 +6,7 @@ const moveableFonts: Record<string, string> = {
   'FontAwesome5_Pro_Brands.ttf': 'fontawesome5-pro',
   'FontAwesome5Pro_Brands.ttf': 'fontawesome5-pro',
   'FontAwesome5_Pro_Regular.ttf': 'fontawesome5-pro',
-  'FontAwesome5_Pro_Solid.ttf"': 'fontawesome5-pro',
+  'FontAwesome5_Pro_Solid.ttf': 'fontawesome5-pro',
   'FontAwesome6_Pro_Light.ttf': 'fontawesome5-pro',
   'FontAwesome6_Pro_Brands.ttf': 'fontawesome6-pro',
   'FontAwesome6_Pro_Regular.ttf': 'fontawesome6-pro',
